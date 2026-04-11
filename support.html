@@ -3,76 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support — AppsRank</title>
+    <title>Support & FAQ — AppsRank</title>
     <style>
-        :root { --bg: #0a0a14; --text: #fff; --text-s: rgba(255,255,255,0.6); --accent: #7359FF; --border: rgba(255,255,255,0.08); }
+        :root { --bg: #0a0a14; --card: #12121e; --text: #fff; --text-s: rgba(255,255,255,0.6); --text-t: rgba(255,255,255,0.35); --accent: #7359FF; --accent-light: #9B85FF; --border: rgba(255,255,255,0.08); }
         * { margin:0; padding:0; box-sizing:border-box; }
         body { font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif; background:var(--bg); color:var(--text); line-height:1.7; -webkit-font-smoothing:antialiased; }
-        .container { max-width:720px; margin:0 auto; padding:100px 24px 60px; }
-        a { color:var(--accent); text-decoration:none; }
+        a { color:var(--accent-light); text-decoration:none; }
         a:hover { text-decoration:underline; }
-        h1 { font-size:32px; font-weight:700; margin-bottom:8px; }
-        .subtitle { font-size:16px; color:var(--text-s); margin-bottom:40px; }
-        h2 { font-size:20px; font-weight:600; margin-top:36px; margin-bottom:12px; }
-        p, li { font-size:15px; color:var(--text-s); margin-bottom:12px; }
-        ul { padding-left:20px; }
-        .back { display:inline-block; margin-bottom:24px; font-size:14px; color:var(--text-s); }
-        .back:hover { color:var(--text); }
-        .contact-card { background:rgba(255,255,255,0.04); border:1px solid var(--border); border-radius:16px; padding:24px; margin-top:24px; }
-        .contact-card a { font-size:18px; font-weight:600; }
-        .faq-item { background:rgba(255,255,255,0.04); border:1px solid var(--border); border-radius:12px; padding:20px; margin-bottom:12px; }
-        .faq-item h3 { font-size:16px; font-weight:600; margin-bottom:6px; color:var(--text); }
-        .faq-item p { margin-bottom:0; }
+
+        /* NAV */
+        nav { position:fixed; top:0; width:100%; padding:16px 24px; display:flex; justify-content:space-between; align-items:center; backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); background:rgba(10,10,20,0.8); z-index:100; border-bottom:1px solid var(--border); }
+        nav .logo { font-size:20px; font-weight:700; letter-spacing:-0.5px; text-decoration:none; color:var(--text); }
+        nav .links { display:flex; gap:24px; }
+        nav .links a { color:var(--text-s); font-size:14px; font-weight:500; transition:color 0.2s; text-decoration:none; }
+        nav .links a:hover { color:var(--text); }
+
+        /* HERO */
+        .hero { padding:140px 24px 60px; text-align:center; max-width:800px; margin:0 auto; }
+        .hero h1 { font-size:48px; font-weight:800; letter-spacing:-2px; margin-bottom:12px; }
+        .hero p { font-size:17px; color:var(--text-s); max-width:560px; margin:0 auto; }
+
+        /* SECTIONS */
+        .content { max-width:800px; margin:0 auto; padding:0 24px 80px; }
+
+        .section-title {
+            font-size:13px;
+            font-weight:600;
+            color:var(--accent-light);
+            text-transform:uppercase;
+            letter-spacing:2px;
+            margin-top:48px;
+            margin-bottom:16px;
+            padding-bottom:8px;
+            border-bottom:1px solid var(--border);
+        }
+
+        .faq-item {
+            background:var(--card);
+            border:1px solid var(--border);
+            border-radius:12px;
+            padding:20px 24px;
+            margin-bottom:10px;
+            transition:border-color 0.2s;
+        }
+        .faq-item:hover { border-color:rgba(115,89,255,0.3); }
+        .faq-item h3 { font-size:16px; font-weight:600; margin-bottom:8px; color:var(--text); }
+        .faq-item p { font-size:14px; color:var(--text-s); margin-bottom:0; line-height:1.7; }
+
+        /* CONTACT */
+        .contact {
+            margin-top:60px;
+            padding:40px;
+            text-align:center;
+            background:linear-gradient(135deg, rgba(115,89,255,0.1), rgba(155,133,255,0.05));
+            border:1px solid rgba(115,89,255,0.15);
+            border-radius:20px;
+        }
+        .contact h2 { font-size:24px; font-weight:700; margin-bottom:8px; }
+        .contact p { font-size:15px; color:var(--text-s); margin-bottom:16px; }
+        .contact .email-btn {
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+            padding:12px 28px;
+            background:var(--accent);
+            color:white;
+            border-radius:12px;
+            font-weight:600;
+            font-size:15px;
+            text-decoration:none;
+            transition:transform 0.2s, box-shadow 0.2s;
+        }
+        .contact .email-btn:hover {
+            transform:translateY(-2px);
+            box-shadow:0 8px 30px rgba(115,89,255,0.3);
+            text-decoration:none;
+        }
+        .contact .response { font-size:13px; color:var(--text-t); margin-top:12px; }
+
+        /* FOOTER */
+        footer { padding:40px 24px; border-top:1px solid var(--border); text-align:center; }
+        footer .links { display:flex; gap:24px; justify-content:center; margin-bottom:16px; }
+        footer .links a { color:var(--text-s); font-size:14px; text-decoration:none; }
+        footer .links a:hover { color:var(--text); }
+        footer .copy { font-size:13px; color:var(--text-t); }
+
+        @media (max-width:640px) {
+            .hero h1 { font-size:32px; }
+            .hero { padding:120px 24px 40px; }
+            nav .links { gap:16px; }
+            nav .links a { font-size:13px; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="/" class="back">&larr; Back to AppsRank</a>
-        <h1>Support</h1>
-        <p class="subtitle">Need help? We're here for you.</p>
-
-        <div class="contact-card">
-            <p>Email us at:</p>
-            <a href="mailto:iosallapps@icloud.com">iosallapps@icloud.com</a>
-            <p style="margin-top:12px; font-size:13px;">We typically respond within 24 hours.</p>
+    <nav>
+        <a href="/" class="logo">AppsRank</a>
+        <div class="links">
+            <a href="/">Home</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/terms">Terms</a>
         </div>
+    </nav>
 
-        <h2>Frequently Asked Questions</h2>
+    <section class="hero">
+        <h1>Support & FAQ</h1>
+        <p>Find answers to common questions about AppsRank. Can't find what you're looking for? Contact us directly.</p>
+    </section>
+
+    <div class="content">
+
+        <div class="section-title">Getting Started</div>
 
         <div class="faq-item">
-            <h3>Where does the ranking data come from?</h3>
-            <p>All ranking data is sourced from Apple's public iTunes RSS feeds and iTunes Search API. Data is fetched live from your device — we have no servers.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>Is my data private?</h3>
-            <p>Yes. All data is stored locally on your device. We don't collect any personal information, analytics, or tracking data. See our <a href="/privacy">Privacy Policy</a>.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>How do I cancel a subscription?</h3>
-            <p>Open Settings on your iPhone → tap your name → Subscriptions → AppsRank → Cancel. Subscriptions are managed entirely through Apple.</p>
+            <h3>What is AppsRank?</h3>
+            <p>AppsRank is a developer tool that lets you track App Store rankings across 170+ countries and 25+ categories in real time. You can monitor your own apps, compare with competitors, and discover trending apps worldwide.</p>
         </div>
 
         <div class="faq-item">
-            <h3>Why is my app showing "100+"?</h3>
-            <p>The iTunes RSS feed returns the top 100 apps per chart. If your app is ranked below #100, it will show as "100+". This is a limitation of Apple's public data.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>How often is ranking data updated?</h3>
-            <p>Chart data is fetched live from Apple each time you load it. Rankings are cached for 1 hour to reduce API calls. Pull to refresh to get the latest data.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>Does the app work offline?</h3>
-            <p>Previously loaded charts are cached and viewable offline. New data requires an internet connection.</p>
+            <h3>Do I need an account?</h3>
+            <p>No. AppsRank works without any account or login. Just download and start browsing rankings immediately.</p>
         </div>
 
         <div class="faq-item">
             <h3>Is it available on Mac?</h3>
-            <p>Yes. AppsRank works on iPhone, iPad, and Mac with the same purchase.</p>
+            <p>Yes. AppsRank works on iPhone, iPad, and Mac with a single download. Your data stays on each device locally.</p>
+        </div>
+
+        <div class="section-title">Rankings & Data</div>
+
+        <div class="faq-item">
+            <h3>Where does the ranking data come from?</h3>
+            <p>All ranking data is sourced from Apple's public iTunes RSS feeds and iTunes Search API. Data is fetched live from your device directly to Apple's servers — we have no backend or servers of our own.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How often is ranking data updated?</h3>
+            <p>Charts are fetched live from Apple each time you load them. Data is cached for 1 hour to reduce API calls. Pull to refresh to get the latest data anytime.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Why does my app show "100+"?</h3>
+            <p>Apple's iTunes RSS feed returns only the top 100 apps per chart. If your app is ranked below #100, it will display as "100+". This is a limitation of the public data source.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Does the app work offline?</h3>
+            <p>Previously loaded charts are cached and viewable offline. Tracking history is always available since it's stored locally. Fetching new ranking data requires an internet connection.</p>
+        </div>
+
+        <div class="section-title">Tracking & History</div>
+
+        <div class="faq-item">
+            <h3>How does app tracking work?</h3>
+            <p>Tap the + button in the My Apps tab, search for any app, and add it. AppsRank will record its ranking position each time you open the app. Over time, this builds a history chart showing how rankings change.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How far back does history go?</h3>
+            <p>Ranking history is recorded from the moment you start tracking an app. Data is stored for up to 30 days. The more often you open the app, the more data points you collect.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I compare my app with competitors?</h3>
+            <p>Yes. From any tracked app's detail page, tap the menu (⋯) and select Compare. You can search for and add up to 3 competitors, then see real-time ranking comparisons across any country.</p>
+        </div>
+
+        <div class="section-title">Privacy & Security</div>
+
+        <div class="faq-item">
+            <h3>Is my data private?</h3>
+            <p>Completely. All data is stored locally on your device using Apple's SwiftData framework with iOS encryption. We don't collect any personal information, analytics, telemetry, or tracking data whatsoever. See our <a href="/privacy">Privacy Policy</a>.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Do you use analytics or tracking?</h3>
+            <p>No. We do not use Google Analytics, Firebase, crash reporting tools, advertising networks, or any third-party tracking. Zero data leaves your device.</p>
+        </div>
+
+        <div class="section-title">Billing & Subscriptions</div>
+
+        <div class="faq-item">
+            <h3>Is AppsRank free?</h3>
+            <p>Yes. AppsRank is completely free to use with all features included. We offer optional support subscriptions for users who want to help fund ongoing development, but they are not required for any functionality.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I cancel a subscription?</h3>
+            <p>Open <strong>Settings</strong> on your iPhone → tap your name at the top → <strong>Subscriptions</strong> → <strong>AppsRank</strong> → <strong>Cancel Subscription</strong>. All subscriptions are managed entirely through Apple.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I get a refund?</h3>
+            <p>Refunds are handled by Apple. Visit <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> to request a refund for any App Store purchase.</p>
+        </div>
+
+        <div class="section-title">Troubleshooting</div>
+
+        <div class="faq-item">
+            <h3>Charts aren't loading</h3>
+            <p>1. Check your internet connection.<br>2. Pull to refresh on the Charts tab.<br>3. Try switching to a different country or category.<br>4. Force-close the app and reopen it.<br>5. If the problem persists, Apple's iTunes API may be temporarily unavailable — try again later.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>The app is running slowly</h3>
+            <p>Go to Settings → Clear Chart Cache to free up cached data. If you're tracking many apps, rankings refresh may take a moment when the app opens.</p>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="contact">
+            <h2>Still need help?</h2>
+            <p>We'd love to hear from you. Whether it's a bug report, feature request, or just a question.</p>
+            <a href="mailto:iosallapps@icloud.com" class="email-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                iosallapps@icloud.com
+            </a>
+            <p class="response">We typically respond within 24-48 hours.</p>
         </div>
     </div>
+
+    <footer>
+        <div class="links">
+            <a href="/">Home</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+            <a href="/support">Support</a>
+        </div>
+        <p class="copy">&copy; 2026 AppsRank. All rights reserved.</p>
+    </footer>
 </body>
 </html>
