@@ -164,6 +164,27 @@
             color: var(--text-tertiary);
         }
 
+        .hero .phone-mockup {
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .hero .phone-mockup img {
+            width: 280px;
+            border-radius: 32px;
+            border: 3px solid rgba(255,255,255,0.1);
+            box-shadow: 0 24px 80px rgba(115,89,255,0.2), 0 8px 30px rgba(0,0,0,0.4);
+        }
+
+        .hero .phone-mockup::after {
+            content: '';
+            position: absolute;
+            inset: -40px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(115,89,255,0.08), transparent 70%);
+            z-index: -1;
+        }
+
         /* FEATURES */
         .features {
             padding: 100px 24px;
@@ -316,6 +337,9 @@
             <a href="#features" class="btn-secondary">Learn More</a>
         </div>
         <p class="platforms">Available on iOS 17+ and macOS</p>
+        <div class="phone-mockup">
+            <img src="screenshot.jpg" alt="AppsRank app showing Top Free charts in United States">
+        </div>
     </section>
 
     <section class="stats">
