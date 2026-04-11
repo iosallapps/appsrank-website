@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support — AppsRank</title>
+    <style>
+        :root { --bg: #0a0a14; --text: #fff; --text-s: rgba(255,255,255,0.6); --accent: #7359FF; --border: rgba(255,255,255,0.08); }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif; background:var(--bg); color:var(--text); line-height:1.7; -webkit-font-smoothing:antialiased; }
+        .container { max-width:720px; margin:0 auto; padding:100px 24px 60px; }
+        a { color:var(--accent); text-decoration:none; }
+        a:hover { text-decoration:underline; }
+        h1 { font-size:32px; font-weight:700; margin-bottom:8px; }
+        .subtitle { font-size:16px; color:var(--text-s); margin-bottom:40px; }
+        h2 { font-size:20px; font-weight:600; margin-top:36px; margin-bottom:12px; }
+        p, li { font-size:15px; color:var(--text-s); margin-bottom:12px; }
+        ul { padding-left:20px; }
+        .back { display:inline-block; margin-bottom:24px; font-size:14px; color:var(--text-s); }
+        .back:hover { color:var(--text); }
+        .contact-card { background:rgba(255,255,255,0.04); border:1px solid var(--border); border-radius:16px; padding:24px; margin-top:24px; }
+        .contact-card a { font-size:18px; font-weight:600; }
+        .faq-item { background:rgba(255,255,255,0.04); border:1px solid var(--border); border-radius:12px; padding:20px; margin-bottom:12px; }
+        .faq-item h3 { font-size:16px; font-weight:600; margin-bottom:6px; color:var(--text); }
+        .faq-item p { margin-bottom:0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back">&larr; Back to AppsRank</a>
+        <h1>Support</h1>
+        <p class="subtitle">Need help? We're here for you.</p>
+
+        <div class="contact-card">
+            <p>Email us at:</p>
+            <a href="mailto:iosallapps@icloud.com">iosallapps@icloud.com</a>
+            <p style="margin-top:12px; font-size:13px;">We typically respond within 24 hours.</p>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3>Where does the ranking data come from?</h3>
+            <p>All ranking data is sourced from Apple's public iTunes RSS feeds and iTunes Search API. Data is fetched live from your device — we have no servers.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Is my data private?</h3>
+            <p>Yes. All data is stored locally on your device. We don't collect any personal information, analytics, or tracking data. See our <a href="/privacy">Privacy Policy</a>.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I cancel a subscription?</h3>
+            <p>Open Settings on your iPhone → tap your name → Subscriptions → AppsRank → Cancel. Subscriptions are managed entirely through Apple.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Why is my app showing "100+"?</h3>
+            <p>The iTunes RSS feed returns the top 100 apps per chart. If your app is ranked below #100, it will show as "100+". This is a limitation of Apple's public data.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How often is ranking data updated?</h3>
+            <p>Chart data is fetched live from Apple each time you load it. Rankings are cached for 1 hour to reduce API calls. Pull to refresh to get the latest data.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Does the app work offline?</h3>
+            <p>Previously loaded charts are cached and viewable offline. New data requires an internet connection.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Is it available on Mac?</h3>
+            <p>Yes. AppsRank works on iPhone, iPad, and Mac with the same purchase.</p>
+        </div>
+    </div>
+</body>
+</html>
