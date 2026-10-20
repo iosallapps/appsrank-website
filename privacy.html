@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy — AppsRank</title>
+    <title>Privacy Policy | AppsRank</title>
     <style>
         :root { --bg: #0a0a14; --card: #12121e; --text: #fff; --text-s: rgba(255,255,255,0.6); --border: rgba(255,255,255,0.08); --accent: #7359FF; }
         * { margin:0; padding:0; box-sizing:border-box; }
@@ -13,6 +13,7 @@
         a:hover { text-decoration:underline; }
         h1 { font-size:32px; font-weight:700; margin-bottom:8px; }
         .updated { font-size:14px; color:var(--text-s); margin-bottom:40px; }
+        h3 { font-size:16px; font-weight:600; margin-top:20px; margin-bottom:8px; }
         h2 { font-size:20px; font-weight:600; margin-top:36px; margin-bottom:12px; }
         p, li { font-size:15px; color:var(--text-s); margin-bottom:12px; }
         ul { padding-left:20px; }
@@ -24,53 +25,136 @@
     <div class="container">
         <a href="/" class="back">&larr; Back to AppsRank</a>
         <h1>Privacy Policy</h1>
-        <p class="updated">Last Updated: April 11, 2026</p>
+        <p class="updated">Last Updated: October 20, 2026</p>
 
-        <h2>1. Information We Collect</h2>
-        <p><strong>Locally Stored Data:</strong> Your tracked apps, ranking snapshots, preferences, and cached chart data are stored exclusively on your device using Apple's SwiftData framework.</p>
-        <p><strong>Data We Do NOT Collect:</strong></p>
+        <h2>1. Who We Are</h2>
+        <p>This Privacy Policy explains how the AppsRank app for iPhone and iPad ("AppsRank" or the "App") handles your data. AppsRank is developed and provided by Cirjan Darius ("we", "us" or "our"), who is the data controller for the personal data described here. You can reach us at <a href="mailto:iosallapps@icloud.com">iosallapps@icloud.com</a>.</p>
+        <p>AppsRank has no account and no sign-in, and we run no servers of our own. The App does include services from Google, RevenueCat and Apple, and this policy sets out what each of them receives, why, and how you can control it.</p>
+
+        <h2>2. Privacy at a Glance</h2>
         <ul>
-            <li>Personal identifiers (name, email, phone)</li>
-            <li>Location data</li>
-            <li>Device identifiers or fingerprints</li>
-            <li>Usage analytics or telemetry</li>
-            <li>Advertising identifiers</li>
-            <li>Browsing or search history</li>
+            <li><strong>Your tracked apps stay on your device.</strong> The apps you track, their ranking history, your comparisons and your preferences are stored on your iPhone or iPad only.</li>
+            <li><strong>Ads:</strong> the free version shows ads from Google AdMob. Subscribers and lifetime purchasers get no ads, and no ad requests are made for them.</li>
+            <li><strong>Analytics and diagnostics:</strong> Google Firebase measures how the App is used, reports crashes and performance problems, and delivers the App's settings.</li>
+            <li><strong>Purchases:</strong> Apple processes payments, and RevenueCat tells the App whether your subscription or lifetime purchase is active.</li>
+            <li><strong>Your choices:</strong> where the law requires consent, for example in the European Economic Area and the United Kingdom, ads and analytics wait for your answer in Google's consent form. The advertising identifier is used only if you allow tracking when iOS asks.</li>
+        </ul>
+        <p>We never ask for your name or email address, and we do not sell your personal information.</p>
+
+        <h2>3. Chart and App Data from Apple</h2>
+        <p>AppsRank shows App Store charts, app details and search results that it downloads directly from Apple's public services (the App Store RSS feeds and the iTunes Search and Lookup APIs). These requests go from your device to Apple, and Apple's privacy policy applies to them. App icons are loaded from Apple's content delivery network. We never see these requests, and the names of the apps you search for, view or track are never sent to us or to any of the services in section 5.</p>
+
+        <h2>4. Data Stored Only on Your Device</h2>
+        <p>AppsRank keeps the following on your device, and we have no access to it there:</p>
+        <ul>
+            <li>The apps you track, their ranking snapshots and history, and your comparisons</li>
+            <li>Cached charts, so the App works when you are offline</li>
+            <li>Your preferences, such as your default country and category, Rank Alerts settings, and the consent choices you made in Google's consent form</li>
+        </ul>
+        <p>None of this is sent to us. This data can also be included in your iCloud or computer backup of your device, which Apple's own privacy policy covers.</p>
+
+        <h2>5. Data Collected by the Services in AppsRank</h2>
+        <p>The services below receive data directly from the App. None of them receive your name, email address or contacts, or the names of the apps you track.</p>
+
+        <h3>5.1 Advertising: Google AdMob</h3>
+        <p>The free version of AppsRank shows full-screen ads served by Google AdMob. Google receives:</p>
+        <ul>
+            <li>Your IP address, from which Google can estimate your approximate location, such as your country or city</li>
+            <li>Device and app information, such as device model, iOS version, language and app version</li>
+            <li>Ad requests and interactions, such as which ads were shown and whether you tapped them</li>
+            <li>Your device's advertising identifier (IDFA), only if you allow tracking when iOS asks (see section 7)</li>
+        </ul>
+        <p>Google uses this to serve ads, measure how they perform, prevent fraud and, where you have allowed it, show ads based on your interests.</p>
+        <p><strong>When:</strong> AppsRank requests no ads until Google's consent form has been answered, where one is required, and until you have answered the iOS tracking prompt. If you subscribe or buy lifetime access, AppsRank stops requesting ads, and the ad service is not started when you open the App later.</p>
+        <p><strong>Personalization:</strong> where consent is required and you have not agreed to personalized ads, AppsRank asks Google for non-personalized ads. Anywhere in the world, if you do not allow tracking, the advertising identifier is not available and ads are not based on tracking you across other companies' apps and websites. Google may still use contextual information, such as the app the ad appears in and your approximate location. AppsRank also supports Apple's SKAdNetwork, which lets an advertiser learn that an install came from an ad without identifying you.</p>
+        <p>Google's privacy policy applies to the data it receives: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>. How Google uses data from apps that use its services is explained at <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>.</p>
+
+        <h3>5.2 Usage Analytics: Google Analytics for Firebase</h3>
+        <p>Google Analytics for Firebase receives:</p>
+        <ul>
+            <li>Events describing how the App is used, for example which tabs you open, onboarding steps, changes of chart country or category (as a country code or category number), adding and removing tracked apps (without the app's name), opening Compare, turning on Rank Alerts, subscription screens, purchases, restores, ads shown, and your answers to permission prompts</li>
+            <li>Whether you use the free version or a paid plan</li>
+            <li>A random identifier for this installation of the App, the identifier iOS gives to apps from the same developer (IDFV), device and app information, and your IP address, from which Google estimates your approximate location</li>
+        </ul>
+        <p>We use this to understand which features work, fix what does not, and see whether our paid plans and our marketing are working.</p>
+        <p><strong>When:</strong> analytics stays switched off until AppsRank knows whether consent is needed for you. Where consent is required, it is switched on only if you agree in Google's consent form to information being stored and accessed on your device. Elsewhere, it is switched on once Google has confirmed that no consent is needed.</p>
+        <p><strong>Advertising signals:</strong> only if you allow tracking, Google Analytics may also use your advertising identifier and share measurement data with Google's advertising services. If you do not allow tracking, AppsRank tells Google Analytics that these advertising uses are not permitted.</p>
+
+        <h3>5.3 Crash Reports and Performance: Firebase Crashlytics and Firebase Performance Monitoring</h3>
+        <p>Firebase Crashlytics receives a report when the App crashes: the technical details of the crash, device model, iOS version, app version, device state such as free memory and storage, and a random installation identifier. If analytics is switched on, the report also includes the most recent analytics events.</p>
+        <p>Firebase Performance Monitoring receives technical measurements such as how long the App takes to start, how smoothly screens draw, and how long the App's network requests take and whether they succeed, together with device and app information, a random installation identifier, and your IP address, which is used to work out your country.</p>
+        <p>These two services are not controlled by the consent form. They run so that we can find and fix crashes and slowdowns.</p>
+
+        <h3>5.4 App Settings: Firebase Remote Config</h3>
+        <p>AppsRank downloads some of its settings from Firebase Remote Config, for example which plan the subscription screen suggests first and how that screen is laid out. The request includes a random installation identifier, the app version, your device language, country and time zone, and your IP address. Firebase is provided by Google. More about how Firebase handles data is at <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>.</p>
+
+        <h3>5.5 Subscriptions and Purchases: Apple and RevenueCat</h3>
+        <p>AppsRank offers auto-renewing subscriptions and a one-time lifetime purchase, sold through the App Store. Apple processes your payment, and your payment details never reach us or RevenueCat. RevenueCat receives:</p>
+        <ul>
+            <li>A random, anonymous user identifier that RevenueCat creates for this installation</li>
+            <li>Your App Store purchase information, such as which plan you bought, purchase and expiry dates, whether you are in a free trial, the price and currency, and whether the subscription will renew</li>
+            <li>Device and app information, such as iOS version, app version, language and App Store country, and your IP address</li>
+        </ul>
+        <p>We use this to know whether your plan is active, to restore your purchases, to check whether you can start a free trial, and to see how subscriptions are doing. RevenueCat does not receive your advertising identifier. RevenueCat's privacy policy is at <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a>, and Apple's is at <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a>.</p>
+
+        <h3>5.6 Emails You Send Us</h3>
+        <p>If you email us, we receive your email address and whatever you write, and we use them only to answer you.</p>
+
+        <h2>6. Legal Basis for Processing (GDPR)</h2>
+        <p>If you are in the European Economic Area, the United Kingdom or Switzerland, we rely on these legal bases:</p>
+        <ul>
+            <li><strong>Consent</strong> for advertising (including personalized ads), for Google Analytics, and for tracking through your advertising identifier. You give it in Google's consent form and in the iOS tracking prompt, and you can withdraw it at any time, as described in section 12.2. Withdrawing consent does not affect processing that took place before.</li>
+            <li><strong>Contract</strong> for processing your purchase and subscription status through Apple and RevenueCat, which is needed to provide the plan you bought.</li>
+            <li><strong>Legitimate interests</strong> for crash reports, performance measurements and app settings (sections 5.3 and 5.4), which we need to keep AppsRank working reliably, and for answering your emails. You can object to this processing by contacting us.</li>
         </ul>
 
-        <h2>2. How We Use Data</h2>
-        <p>All app functionality operates locally on your device. Ranking data is fetched directly from Apple's public iTunes RSS feeds and iTunes Search API. These requests go from your device to Apple's servers — we have no server infrastructure and never see your requests.</p>
+        <h2>7. Tracking and App Tracking Transparency</h2>
+        <p>During onboarding, after Google's consent form if one is shown, iOS asks whether AppsRank may track you across other companies' apps and websites. If you allow tracking, your advertising identifier is available to Google AdMob and Google Analytics for personalized ads and ad measurement, as described in sections 5.1 and 5.2, and still subject to your choices in Google's consent form where one applies. If you ask AppsRank not to track, the advertising identifier is not used, and AppsRank tells Google Analytics that advertising uses of your data are not permitted. No ad is requested until you have answered the prompt.</p>
+        <p>You can change your answer at any time in the iOS Settings app, under Privacy &amp; Security, Tracking. AppsRank applies the change the next time you open it.</p>
 
-        <h2>3. Third-Party Services</h2>
-        <p>The app communicates only with Apple's public APIs:</p>
+        <h2>8. Rank Alerts and Notifications</h2>
+        <p>If you turn on Rank Alerts and allow notifications, AppsRank checks the rankings of your tracked apps in the background, using Apple's public chart feeds, and tells you about changes with local notifications. AppsRank uses no push notification service, and nothing about your notifications is sent to us or to anyone else. You can turn them off in AppsRank's Settings or in the iOS Settings app.</p>
+
+        <h2>9. Children's Privacy</h2>
+        <p>AppsRank is not directed to children under the age of 13, and you must be at least 13 to use it, as our <a href="/terms">Terms of Service</a> say. We do not knowingly collect personal data from children under 13. If you believe a child under 13 has used AppsRank and data about them has been collected, please contact us at <a href="mailto:iosallapps@icloud.com">iosallapps@icloud.com</a> and we will help have it deleted.</p>
+
+        <h2>10. International Data Transfers</h2>
+        <p>Google and RevenueCat process data in the United States and in other countries. When data from the European Economic Area, the United Kingdom or Switzerland is transferred to a country without an adequacy decision, these companies protect it with safeguards recognised under GDPR, such as the EU-U.S. Data Privacy Framework or the European Commission's Standard Contractual Clauses.</p>
+
+        <h2>11. How Long Data Is Kept</h2>
         <ul>
-            <li><strong>iTunes RSS Feeds</strong> — for chart rankings</li>
-            <li><strong>iTunes Search API</strong> — for app search</li>
-            <li><strong>iTunes Lookup API</strong> — for app metadata</li>
-            <li><strong>Apple StoreKit</strong> — for optional support subscriptions</li>
+            <li>Data on your device stays until you delete it. Deleting the App removes AppsRank's data from your device.</li>
+            <li>Google Analytics keeps event data for the retention period set in our account, which is never more than 14 months. Reports that only show totals and do not identify anyone may be kept longer.</li>
+            <li>Firebase Crashlytics keeps crash reports and their identifiers for 90 days.</li>
+            <li>Firebase Performance Monitoring keeps performance data linked to an IP address for 30 days, and other performance data for 60 days.</li>
+            <li>Firebase Remote Config and Google AdMob keep data for the periods set out in Firebase's privacy information and Google's privacy policy, linked in section 5.</li>
+            <li>RevenueCat keeps purchase records for as long as they are needed to provide your plan and to meet accounting and legal obligations.</li>
+            <li>Emails are kept for as long as needed to answer you and follow up, and then deleted.</li>
         </ul>
-        <p>We do not use analytics services (Google Analytics, Firebase, etc.), advertising networks, social media integrations, crash reporting tools, or any other third-party tracking.</p>
 
-        <h2>4. Data Storage & Security</h2>
-        <p>All data is stored locally using Apple's SwiftData framework with iOS encryption. App icons displayed in the app are loaded directly from Apple's content delivery network and are not stored locally.</p>
+        <h2>12. Your Rights and Choices</h2>
+        <h3>12.1 Your Rights</h3>
+        <p>Depending on where you live, you have the right to access, correct and delete your personal data, to restrict or object to its processing, to data portability, and to withdraw consent at any time. If you are in the European Economic Area or the United Kingdom, you can also complain to a data protection authority, for example in the country where you live or, in Romania, the ANSPDCP at <a href="https://www.dataprotection.ro">dataprotection.ro</a>. We would appreciate the chance to help first.</p>
+        <h3>12.2 Controls in AppsRank and iOS</h3>
+        <ul>
+            <li><strong>Consent form:</strong> if your region requires it, you can reopen Google's consent form at any time in AppsRank's Settings, under Ad Privacy Settings.</li>
+            <li><strong>Tracking:</strong> iOS Settings, under Privacy &amp; Security, Tracking.</li>
+            <li><strong>Notifications:</strong> AppsRank's Settings, under Rank Alerts, or iOS Settings.</li>
+            <li><strong>Everything on your device:</strong> delete the App. A subscription is not cancelled by deleting the App.</li>
+        </ul>
+        <h3>12.3 Requests About Data Held by the Services</h3>
+        <p>Because AppsRank has no accounts, the data held by Google and RevenueCat is linked to random identifiers rather than to your name or email address, so we often cannot tell which records are yours. Email us at <a href="mailto:iosallapps@icloud.com">iosallapps@icloud.com</a> and we will do what we can. For purchase records, include the order ID from your Apple receipt (you can find it at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>) so that we can find your record and ask RevenueCat to delete it. You can manage Google ad personalization at <a href="https://myadcenter.google.com">myadcenter.google.com</a>. We answer privacy requests within one month.</p>
+        <h3>12.4 California Residents</h3>
+        <p>We do not sell personal information for money. If you allow tracking, the advertising identifier and ad data that Google receives may count as "sharing" personal information for cross-context behavioral advertising under California law. You can stop this at any time by not allowing tracking in iOS Settings, under Privacy &amp; Security, Tracking. We do not use sensitive personal information, and you have the right to know about and delete your personal information and not to be treated differently for using these rights.</p>
 
-        <h2>5. Subscriptions</h2>
-        <p>Optional support subscriptions are processed entirely through Apple's StoreKit framework. We do not collect or have access to your payment information. Subscription management is handled through your Apple ID settings.</p>
+        <h2>13. Security</h2>
+        <p>Your data on the device is protected by iOS app sandboxing and device encryption. The services in section 5 send data over encrypted connections. No method of storing or sending data is completely secure, but we choose established providers and share only what is described in this policy.</p>
 
-        <h2>6. Children's Privacy</h2>
-        <p>AppsRank does not collect any personal data from any user, including children under 13. The app does not require account creation or login.</p>
+        <h2>14. Changes to This Privacy Policy</h2>
+        <p>We will update this policy when AppsRank or the services it uses change. We will update the "Last Updated" date at the top, and if a change materially affects you, we will tell you in the App or in the App Store update notes before it takes effect. The current policy is always at <a href="https://appsrankapp.com/privacy">appsrankapp.com/privacy</a>.</p>
 
-        <h2>7. Data Retention</h2>
-        <p>Since all data is stored locally on your device, you have full control over it. Deleting the app removes all associated data. We retain no data on any server.</p>
-
-        <h2>8. Your Rights</h2>
-        <p>You can delete all app data at any time by deleting the app or using the "Clear Cache" option in Settings. Since we don't collect any personal data, there is no data for us to provide, correct, or delete.</p>
-
-        <h2>9. Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. Changes will be reflected in the "Last Updated" date. Continued use of the app constitutes acceptance of the updated policy.</p>
-
-        <h2>10. Contact</h2>
-        <p>If you have questions about this Privacy Policy, contact us at <a href="mailto:iosallapps@icloud.com">iosallapps@icloud.com</a>.</p>
+        <h2>15. Contact Us</h2>
+        <p>Developer and data controller: Cirjan Darius<br>Email: <a href="mailto:iosallapps@icloud.com">iosallapps@icloud.com</a><br>Support: <a href="/support">appsrankapp.com/support</a></p>
     </div>
 </body>
 </html>
