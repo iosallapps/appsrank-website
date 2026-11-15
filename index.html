@@ -3,408 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6762045370">
     <title>AppsRank — Track App Store Rankings Worldwide</title>
     <meta name="description" content="Track App Store rankings across 170+ countries. Monitor competitors, view ranking history, and discover top apps. Built for developers.">
-    <meta name="theme-color" content="#7359FF">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
-    <style>
-        :root {
-            --accent: #7359FF;
-            --accent-light: #9B85FF;
-            --bg: #0a0a14;
-            --card: #12121e;
-            --text: #ffffff;
-            --text-secondary: rgba(255,255,255,0.6);
-            --text-tertiary: rgba(255,255,255,0.35);
-            --border: rgba(255,255,255,0.08);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* NAV */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 16px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            background: rgba(10,10,20,0.8);
-            z-index: 100;
-            border-bottom: 1px solid var(--border);
-        }
-
-        nav .logo {
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        nav .links { display: flex; gap: 24px; }
-        nav .links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        nav .links a:hover { color: var(--text); }
-
-        /* HERO */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 120px 24px 80px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(115,89,255,0.15), transparent 70%);
-            top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            pointer-events: none;
-        }
-
-        .hero .badge {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--accent-light);
-            background: rgba(115,89,255,0.12);
-            padding: 6px 16px;
-            border-radius: 20px;
-            margin-bottom: 24px;
-            border: 1px solid rgba(115,89,255,0.2);
-        }
-
-        .hero h1 {
-            font-size: clamp(40px, 6vw, 64px);
-            font-weight: 800;
-            letter-spacing: -2px;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 18px;
-            color: var(--text-secondary);
-            max-width: 540px;
-            margin-bottom: 36px;
-            line-height: 1.7;
-        }
-
-        .hero .cta {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 14px 28px;
-            background: var(--accent);
-            color: white;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(115,89,255,0.3);
-        }
-
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 14px 28px;
-            background: rgba(255,255,255,0.06);
-            color: var(--text-secondary);
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            border: 1px solid var(--border);
-            transition: background 0.2s;
-        }
-        .btn-secondary:hover { background: rgba(255,255,255,0.1); }
-
-        .hero .platforms {
-            margin-top: 16px;
-            font-size: 13px;
-            color: var(--text-tertiary);
-        }
-
-        .hero .phone-mockup {
-            margin-top: 50px;
-            position: relative;
-        }
-
-        .hero .phone-mockup img {
-            width: 280px;
-            border-radius: 32px;
-            border: 3px solid rgba(255,255,255,0.1);
-            box-shadow: 0 24px 80px rgba(115,89,255,0.2), 0 8px 30px rgba(0,0,0,0.4);
-        }
-
-        .hero .phone-mockup::after {
-            content: '';
-            position: absolute;
-            inset: -40px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(115,89,255,0.08), transparent 70%);
-            z-index: -1;
-        }
-
-        /* FEATURES */
-        .features {
-            padding: 100px 24px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .features .section-label {
-            text-align: center;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--accent-light);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 12px;
-        }
-
-        .features h2 {
-            text-align: center;
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 60px;
-            letter-spacing: -1px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .feature-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 28px;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-        .feature-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(115,89,255,0.3);
-        }
-
-        .feature-card .icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            margin-bottom: 16px;
-        }
-
-        .feature-card h3 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .feature-card p {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* STATS */
-        .stats {
-            padding: 80px 24px;
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            flex-wrap: wrap;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat .number {
-            font-size: 48px;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--accent), var(--accent-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .stat .label {
-            font-size: 14px;
-            color: var(--text-tertiary);
-            margin-top: 4px;
-        }
-
-        /* FOOTER */
-        footer {
-            padding: 60px 24px;
-            border-top: 1px solid var(--border);
-            text-align: center;
-        }
-
-        footer .footer-links {
-            display: flex;
-            gap: 24px;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        footer .footer-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.2s;
-        }
-        footer .footer-links a:hover { color: var(--text); }
-
-        footer .copyright {
-            font-size: 13px;
-            color: var(--text-tertiary);
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 640px) {
-            nav .links { gap: 16px; }
-            nav .links a { font-size: 13px; }
-            .stats { gap: 40px; }
-            .stat .number { font-size: 36px; }
-        }
-    </style>
+    <meta name="author" content="Visto Apps">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0b0716">
+    <link rel="canonical" href="https://appsrankapp.com/">
+    <meta property="og:title" content="AppsRank — Track App Store Rankings Worldwide">
+    <meta property="og:description" content="Track App Store rankings across 170+ countries. Monitor competitors, view ranking history, and discover top apps. Built for developers.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://appsrankapp.com/">
+    <meta property="og:site_name" content="AppsRank">
+    <link rel="icon" type="image/webp" href="/img/icon.webp">
+    <link rel="apple-touch-icon" href="/img/icon.webp">
+    <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/styles.css?v=20261115">
 </head>
 <body>
-    <nav>
-        <div class="logo">AppsRank</div>
-        <div class="links">
-            <a href="#features">Features</a>
-            <a href="/privacy">Privacy</a>
-            <a href="/terms">Terms</a>
-            <a href="/support">Support</a>
+    <div class="animated-bg" aria-hidden="true"></div>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    <header>
+        <div class="container">
+            <a href="/" class="logo"><img src="/img/icon.webp" alt="" width="38" height="38">AppsRank</a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+            <nav aria-label="Main"><ul class="nav-links"><li><a href="/#features">Features</a></li><li><a href="/privacy">Privacy</a></li><li><a href="/terms">Terms</a></li><li><a href="/support">Support</a></li></ul></nav>
         </div>
-    </nav>
-
+    </header>
+    <main id="main">
     <section class="hero">
-        <div class="badge">Built for developers, by developers</div>
-        <h1>Track App Store<br>Rankings Worldwide</h1>
-        <p>Monitor your app's rankings across 170+ countries, view historical trends, compare with competitors, and discover what's trending — all in real time.</p>
-        <div class="cta">
-            <a href="#" class="btn-primary">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                Download on App Store
-            </a>
-            <a href="#features" class="btn-secondary">Learn More</a>
-        </div>
-        <p class="platforms">Available on iPhone and iPad, iOS 17 or later</p>
-        <div class="phone-mockup">
-            <img src="screenshot.jpg" alt="AppsRank app showing Top Free charts in United States">
-        </div>
-    </section>
-
-    <section class="stats">
-        <div class="stat">
-            <div class="number">170+</div>
-            <div class="label">Countries Supported</div>
-        </div>
-        <div class="stat">
-            <div class="number">25+</div>
-            <div class="label">App Categories</div>
-        </div>
-        <div class="stat">
-            <div class="number">30</div>
-            <div class="label">Days of History (Pro)</div>
-        </div>
-        <div class="stat">
-            <div class="number">100%</div>
-            <div class="label">Free to Download</div>
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-pill">Built for developers, by developers</span>
+                <h1>Track App Store <em>Rankings Worldwide</em></h1>
+                <p class="tagline">Monitor your app's rankings across 170+ countries, view historical trends, compare with competitors, and discover what's trending — all in real time.</p>
+                <div class="cta-buttons">
+                    <a href="https://apps.apple.com/app/id6762045370" class="btn-glow btn-large"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>Download on App Store</a>
+                    <a href="#features" class="btn-outline btn-large">Learn More</a>
+                </div>
+                <p class="trust-line">Available on iPhone and iPad, iOS 17 or later</p>
+            </div>
+            <div class="hero-phone"><img src="/img/phone-charts.webp" width="560" height="1143" alt="AppsRank app showing Top Free charts in United States"></div>
         </div>
     </section>
-
+    <section class="stats"><div class="container"><div class="stats-grid"><div class="stat"><div class="number">170+</div><div class="label">Countries Supported</div></div><div class="stat"><div class="number">25+</div><div class="label">App Categories</div></div><div class="stat"><div class="number">30</div><div class="label">Days of History (Pro)</div></div><div class="stat"><div class="number">100%</div><div class="label">Free to Download</div></div></div></div></section>
     <section class="features" id="features">
-        <div class="section-label">Features</div>
-        <h2>Everything you need to track rankings</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="icon" style="background:rgba(0,200,100,0.12)">📊</div>
-                <h3>Real-Time Rankings</h3>
-                <p>See live App Store charts for any country and category. Top Free, Top Paid, and Top Grossing — all updated from iTunes.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon" style="background:rgba(115,89,255,0.12)">📈</div>
-                <h3>Ranking History</h3>
-                <p>Track how your app moves in the charts over 30 days (7 days in the free version). Spot trends, identify drops, and measure the impact of your updates.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon" style="background:rgba(255,150,50,0.12)">🔍</div>
-                <h3>Competitor Analysis</h3>
-                <p>Compare your app with up to 3 competitors side by side. See who's ahead, who's behind, and how rankings shift across markets.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon" style="background:rgba(255,80,80,0.12)">🔔</div>
-                <h3>Smart Alerts</h3>
-                <p>Get notified when your app enters the Top 10, moves 5+ positions, or enters or leaves the Top 200. Never miss a ranking change.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon" style="background:rgba(50,150,255,0.12)">🌍</div>
-                <h3>Global Discovery</h3>
-                <p>Explore Top 3 apps from every country, filter by category, and discover what's trending in markets you've never checked before.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon" style="background:rgba(200,100,255,0.12)">🔒</div>
-                <h3>Privacy First</h3>
-                <p>The apps you track and their history stay on your device. No accounts, no sign-in. Rankings come straight from Apple to your device. The free version shows ads and uses analytics, with your consent where the law requires it.</p>
+        <div class="container">
+            <span class="section-label">Features</span>
+            <h2>Everything you need to <em>track rankings</em></h2>
+            <div class="features-grid"><div class="feature-card"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d='M4 20V10M10 20V4M16 20v-7M22 20H2'/></svg></div><h3>Real-Time Rankings</h3><p>See live App Store charts for any country and category. Top Free, Top Paid, and Top Grossing — all updated from iTunes.</p></div><div class="feature-card"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d='M3 17l6-6 4 4 8-8'/><path d='M15 7h6v6'/></svg></div><h3>Ranking History</h3><p>Track how your app moves in the charts over 30 days (7 days in the free version). Spot trends, identify drops, and measure the impact of your updates.</p></div><div class="feature-card"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx='11' cy='11' r='7'/><path d='M21 21l-4.3-4.3'/></svg></div><h3>Competitor Analysis</h3><p>Compare your app with up to 3 competitors side by side. See who's ahead, who's behind, and how rankings shift across markets.</p></div><div class="feature-card"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d='M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9'/><path d='M13.7 21a2 2 0 01-3.4 0'/></svg></div><h3>Smart Alerts</h3><p>Get notified when your app enters the Top 10, moves 5+ positions, or enters or leaves the Top 200. Never miss a ranking change.</p></div><div class="feature-card"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx='12' cy='12' r='9'/><path d='M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18'/></svg></div><h3>Global Discovery</h3><p>Explore Top 3 apps from every country, filter by category, and discover what's trending in markets you've never checked before.</p></div><div class="feature-card"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x='4' y='11' width='16' height='10' rx='2'/><path d='M8 11V7a4 4 0 018 0v4'/></svg></div><h3>Privacy First</h3><p>The apps you track and their history stay on your device. No accounts, no sign-in. Rankings come straight from Apple to your device. The free version shows ads and uses analytics, with your consent where the law requires it.</p></div></div>
+        </div>
+    </section>
+    <section class="shot-band">
+        <div class="container">
+            <div class="shot-note">
+                <div>
+                    <h3>See who is moving, in any market</h3>
+                    <p>Top Movers shows the biggest gainers and fallers over 24 hours, 7 or 30 days, for the country and chart you pick.</p>
+                    <p>Add an app to My Apps and AppsRank records its position each time you open it.</p>
+                </div>
+                <img src="/img/phone-detail.webp" width="520" height="658" alt="AppsRank My Apps screen with Top Movers" loading="lazy">
             </div>
         </div>
     </section>
-
+    </main>
     <footer>
-        <div class="footer-links">
-            <a href="/privacy">Privacy Policy</a>
-            <a href="/terms">Terms of Service</a>
-            <a href="/support">Support</a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section"><h3>AppsRank</h3><p>Track App Store rankings in 170+ countries. Built for developers.</p></div>
+                <div class="footer-section"><h4>Explore</h4><ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#features">Features</a></li>
+                    <li><a href="/support">Support</a></li>
+                    <li><a href="https://apps.apple.com/app/id6762045370">App Store</a></li></ul></div>
+                <div class="footer-section"><h4>Legal</h4><ul>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Use</a></li>
+                    <li><a href="mailto:iosallapps@gmail.com">iosallapps@gmail.com</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><span>&copy; 2026 Visto Apps, the brand of Darius Cirjan</span><span>App Store is a service mark of Apple Inc. Ranking data provided by iTunes.</span><a href="https://vistoapps.com">Made by Visto Apps</a></div>
         </div>
-        <p class="copyright">&copy; 2026 AppsRank. All rights reserved.<br>App Store is a service mark of Apple Inc. Ranking data provided by iTunes.</p>
     </footer>
+    <script src="/site.js?v=20261115" defer></script>
 </body>
 </html>

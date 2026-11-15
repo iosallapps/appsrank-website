@@ -3,233 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support & FAQ — AppsRank</title>
-    <style>
-        :root { --bg: #0a0a14; --card: #12121e; --text: #fff; --text-s: rgba(255,255,255,0.6); --text-t: rgba(255,255,255,0.35); --accent: #7359FF; --accent-light: #9B85FF; --border: rgba(255,255,255,0.08); }
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif; background:var(--bg); color:var(--text); line-height:1.7; -webkit-font-smoothing:antialiased; }
-        a { color:var(--accent-light); text-decoration:none; }
-        a:hover { text-decoration:underline; }
-
-        /* NAV */
-        nav { position:fixed; top:0; width:100%; padding:16px 24px; display:flex; justify-content:space-between; align-items:center; backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); background:rgba(10,10,20,0.8); z-index:100; border-bottom:1px solid var(--border); }
-        nav .logo { font-size:20px; font-weight:700; letter-spacing:-0.5px; text-decoration:none; color:var(--text); }
-        nav .links { display:flex; gap:24px; }
-        nav .links a { color:var(--text-s); font-size:14px; font-weight:500; transition:color 0.2s; text-decoration:none; }
-        nav .links a:hover { color:var(--text); }
-
-        /* HERO */
-        .hero { padding:140px 24px 60px; text-align:center; max-width:800px; margin:0 auto; }
-        .hero h1 { font-size:48px; font-weight:800; letter-spacing:-2px; margin-bottom:12px; }
-        .hero p { font-size:17px; color:var(--text-s); max-width:560px; margin:0 auto; }
-
-        /* SECTIONS */
-        .content { max-width:800px; margin:0 auto; padding:0 24px 80px; }
-
-        .section-title {
-            font-size:13px;
-            font-weight:600;
-            color:var(--accent-light);
-            text-transform:uppercase;
-            letter-spacing:2px;
-            margin-top:48px;
-            margin-bottom:16px;
-            padding-bottom:8px;
-            border-bottom:1px solid var(--border);
-        }
-
-        .faq-item {
-            background:var(--card);
-            border:1px solid var(--border);
-            border-radius:12px;
-            padding:20px 24px;
-            margin-bottom:10px;
-            transition:border-color 0.2s;
-        }
-        .faq-item:hover { border-color:rgba(115,89,255,0.3); }
-        .faq-item h3 { font-size:16px; font-weight:600; margin-bottom:8px; color:var(--text); }
-        .faq-item p { font-size:14px; color:var(--text-s); margin-bottom:0; line-height:1.7; }
-
-        /* CONTACT */
-        .contact {
-            margin-top:60px;
-            padding:40px;
-            text-align:center;
-            background:linear-gradient(135deg, rgba(115,89,255,0.1), rgba(155,133,255,0.05));
-            border:1px solid rgba(115,89,255,0.15);
-            border-radius:20px;
-        }
-        .contact h2 { font-size:24px; font-weight:700; margin-bottom:8px; }
-        .contact p { font-size:15px; color:var(--text-s); margin-bottom:16px; }
-        .contact .email-btn {
-            display:inline-flex;
-            align-items:center;
-            gap:8px;
-            padding:12px 28px;
-            background:var(--accent);
-            color:white;
-            border-radius:12px;
-            font-weight:600;
-            font-size:15px;
-            text-decoration:none;
-            transition:transform 0.2s, box-shadow 0.2s;
-        }
-        .contact .email-btn:hover {
-            transform:translateY(-2px);
-            box-shadow:0 8px 30px rgba(115,89,255,0.3);
-            text-decoration:none;
-        }
-        .contact .response { font-size:13px; color:var(--text-t); margin-top:12px; }
-
-        /* FOOTER */
-        footer { padding:40px 24px; border-top:1px solid var(--border); text-align:center; }
-        footer .links { display:flex; gap:24px; justify-content:center; margin-bottom:16px; }
-        footer .links a { color:var(--text-s); font-size:14px; text-decoration:none; }
-        footer .links a:hover { color:var(--text); }
-        footer .copy { font-size:13px; color:var(--text-t); }
-
-        @media (max-width:640px) {
-            .hero h1 { font-size:32px; }
-            .hero { padding:120px 24px 40px; }
-            nav .links { gap:16px; }
-            nav .links a { font-size:13px; }
-        }
-    </style>
+    <meta name="apple-itunes-app" content="app-id=6762045370">
+    <title>Support & FAQ | AppsRank</title>
+    <meta name="description" content="Answers to common questions about AppsRank: rankings, tracking, privacy, subscriptions and troubleshooting.">
+    <meta name="author" content="Visto Apps">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0b0716">
+    <link rel="canonical" href="https://appsrankapp.com/support">
+    <meta property="og:title" content="Support & FAQ | AppsRank">
+    <meta property="og:description" content="Answers to common questions about AppsRank: rankings, tracking, privacy, subscriptions and troubleshooting.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://appsrankapp.com/support">
+    <meta property="og:site_name" content="AppsRank">
+    <link rel="icon" type="image/webp" href="/img/icon.webp">
+    <link rel="apple-touch-icon" href="/img/icon.webp">
+    <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/styles.css?v=20261115">
 </head>
 <body>
-    <nav>
-        <a href="/" class="logo">AppsRank</a>
-        <div class="links">
-            <a href="/">Home</a>
-            <a href="/privacy">Privacy</a>
-            <a href="/terms">Terms</a>
+    <div class="animated-bg" aria-hidden="true"></div>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    <header>
+        <div class="container">
+            <a href="/" class="logo"><img src="/img/icon.webp" alt="" width="38" height="38">AppsRank</a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+            <nav aria-label="Main"><ul class="nav-links"><li><a href="/#features">Features</a></li><li><a href="/privacy">Privacy</a></li><li><a href="/terms">Terms</a></li><li><a href="/support" aria-current="page">Support</a></li></ul></nav>
         </div>
-    </nav>
-
-    <section class="hero">
-        <h1>Support & FAQ</h1>
-        <p>Find answers to common questions about AppsRank. Can't find what you're looking for? Contact us directly.</p>
-    </section>
-
-    <div class="content">
-
-        <div class="section-title">Getting Started</div>
-
-        <div class="faq-item">
-            <h3>What is AppsRank?</h3>
-            <p>AppsRank is a developer tool that lets you track App Store rankings across 170+ countries and 25+ categories in real time. You can monitor your own apps, compare with competitors, and discover trending apps worldwide.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>Do I need an account?</h3>
-            <p>No. AppsRank works without any account or login. Just download and start browsing rankings immediately.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>Which devices does it run on?</h3>
-            <p>AppsRank is built for iPhone and iPad (iOS 17 or later). Your data stays on your device.</p>
-        </div>
-
-        <div class="section-title">Rankings & Data</div>
-
-        <div class="faq-item">
-            <h3>Where does the ranking data come from?</h3>
-            <p>All ranking data is sourced from Apple's public iTunes RSS feeds and iTunes Search API. Data is fetched live from your device directly to Apple's servers — we have no backend or servers of our own.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>How often is ranking data updated?</h3>
-            <p>Charts are fetched live from Apple each time you load them. Data is cached for 1 hour to reduce API calls. Pull to refresh to get the latest data anytime.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>Why does my app show "100+"?</h3>
-            <p>Apple's iTunes RSS feed returns only the top 100 apps per chart. If your app is ranked below #100, it will display as "100+". This is a limitation of the public data source.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>Does the app work offline?</h3>
-            <p>Previously loaded charts are cached and viewable offline. Tracking history is always available since it's stored locally. Fetching new ranking data requires an internet connection.</p>
-        </div>
-
-        <div class="section-title">Tracking & History</div>
-
-        <div class="faq-item">
-            <h3>How does app tracking work?</h3>
-            <p>Tap the + button in the My Apps tab, search for any app, and add it. AppsRank will record its ranking position each time you open the app. Over time, this builds a history chart showing how rankings change.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>How far back does history go?</h3>
-            <p>Ranking history is recorded from the moment you start tracking an app. Data is stored for up to 30 days. The more often you open the app, the more data points you collect.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>Can I compare my app with competitors?</h3>
-            <p>Yes. From any tracked app's detail page, tap the menu (⋯) and select Compare. You can search for and add up to 3 competitors, then see real-time ranking comparisons across any country.</p>
-        </div>
-
-        <div class="section-title">Privacy & Security</div>
-
-        <div class="faq-item">
-            <h3>Is my data private?</h3>
-            <p>Your tracked apps, ranking history and preferences are stored only on your device. AppsRank has no accounts and never sends the names of the apps you track. The free version uses Google AdMob for ads and Google Firebase for analytics and crash reports, under the choices you make in the consent form and the iOS tracking prompt. See our <a href="/privacy">Privacy Policy</a>.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>Do you use analytics or tracking?</h3>
-            <p>AppsRank uses Google Analytics for Firebase to see which features are used, Firebase Crashlytics and Performance Monitoring to fix crashes and slowdowns, and Google AdMob to show ads in the free version. Where the law requires consent, analytics and ads wait for your answer in Google's consent form, and your advertising identifier is used only if you allow tracking when iOS asks. You can change these choices in Settings, Ad Privacy Settings, and in iOS Settings, Privacy &amp; Security, Tracking. Details are in our <a href="/privacy">Privacy Policy</a>.</p>
-        </div>
-
-        <div class="section-title">Billing & Subscriptions</div>
-
-        <div class="faq-item">
-            <h3>Is AppsRank free?</h3>
-            <p>AppsRank is free to download. The free version lets you browse every chart, track one app in one country with 7 days of history, and shows ads. Weekly and monthly subscriptions (with a free trial where offered) or a one-time lifetime purchase unlock every country, the full history, more tracked apps, Compare and Rank Alerts, with no ads.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>How do I cancel a subscription?</h3>
-            <p>Open <strong>Settings</strong> on your iPhone → tap your name at the top → <strong>Subscriptions</strong> → <strong>AppsRank</strong> → <strong>Cancel Subscription</strong>. All subscriptions are managed entirely through Apple.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>Can I get a refund?</h3>
-            <p>Refunds are handled by Apple. Visit <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> to request a refund for any App Store purchase.</p>
-        </div>
-
-        <div class="section-title">Troubleshooting</div>
-
-        <div class="faq-item">
-            <h3>Charts aren't loading</h3>
-            <p>1. Check your internet connection.<br>2. Pull to refresh on the Charts tab.<br>3. Try switching to a different country or category.<br>4. Force-close the app and reopen it.<br>5. If the problem persists, Apple's iTunes API may be temporarily unavailable — try again later.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>The app is running slowly</h3>
-            <p>Go to Settings → Clear Chart Cache to free up cached data. If you're tracking many apps, rankings refresh may take a moment when the app opens.</p>
-        </div>
-
-        <!-- CONTACT -->
+    </header>
+    <main id="main" class="support-page">
+    <div class="container">
+        <h1>Support &amp; <em>FAQ</em></h1>
+        <p class="section-intro">Find answers to common questions about AppsRank. Can't find what you're looking for? Contact us directly.</p>
+        <h2 class="faq-title">Getting Started</h2><div class="faq-list"><details class="faq-item"><summary>What is AppsRank?</summary><p>AppsRank is a developer tool that lets you track App Store rankings across 170+ countries and 25+ categories in real time. You can monitor your own apps, compare with competitors, and discover trending apps worldwide.</p></details><details class="faq-item"><summary>Do I need an account?</summary><p>No. AppsRank works without any account or login. Just download and start browsing rankings immediately.</p></details><details class="faq-item"><summary>Which devices does it run on?</summary><p>AppsRank is built for iPhone and iPad (iOS 17 or later). Your data stays on your device.</p></details></div><h2 class="faq-title">Rankings & Data</h2><div class="faq-list"><details class="faq-item"><summary>Where does the ranking data come from?</summary><p>All ranking data is sourced from Apple's public iTunes RSS feeds and iTunes Search API. Data is fetched live from your device directly to Apple's servers — we have no backend or servers of our own.</p></details><details class="faq-item"><summary>How often is ranking data updated?</summary><p>Charts are fetched live from Apple each time you load them. Data is cached for 1 hour to reduce API calls. Pull to refresh to get the latest data anytime.</p></details><details class="faq-item"><summary>Why does my app show "100+"?</summary><p>Apple's iTunes RSS feed returns only the top 100 apps per chart. If your app is ranked below #100, it will display as "100+". This is a limitation of the public data source.</p></details><details class="faq-item"><summary>Does the app work offline?</summary><p>Previously loaded charts are cached and viewable offline. Tracking history is always available since it's stored locally. Fetching new ranking data requires an internet connection.</p></details></div><h2 class="faq-title">Tracking & History</h2><div class="faq-list"><details class="faq-item"><summary>How does app tracking work?</summary><p>Tap the + button in the My Apps tab, search for any app, and add it. AppsRank will record its ranking position each time you open the app. Over time, this builds a history chart showing how rankings change.</p></details><details class="faq-item"><summary>How far back does history go?</summary><p>Ranking history is recorded from the moment you start tracking an app. Data is stored for up to 30 days. The more often you open the app, the more data points you collect.</p></details><details class="faq-item"><summary>Can I compare my app with competitors?</summary><p>Yes. From any tracked app's detail page, tap the menu (⋯) and select Compare. You can search for and add up to 3 competitors, then see real-time ranking comparisons across any country.</p></details></div><h2 class="faq-title">Privacy & Security</h2><div class="faq-list"><details class="faq-item"><summary>Is my data private?</summary><p>Your tracked apps, ranking history and preferences are stored only on your device. AppsRank has no accounts and never sends the names of the apps you track. The free version uses Google AdMob for ads and Google Firebase for analytics and crash reports, under the choices you make in the consent form and the iOS tracking prompt. See our <a href="/privacy">Privacy Policy</a>.</p></details><details class="faq-item"><summary>Do you use analytics or tracking?</summary><p>AppsRank uses Google Analytics for Firebase to see which features are used, Firebase Crashlytics and Performance Monitoring to fix crashes and slowdowns, and Google AdMob to show ads in the free version. Where the law requires consent, analytics and ads wait for your answer in Google's consent form, and your advertising identifier is used only if you allow tracking when iOS asks. You can change these choices in Settings, Ad Privacy Settings, and in iOS Settings, Privacy &amp; Security, Tracking. Details are in our <a href="/privacy">Privacy Policy</a>.</p></details></div><h2 class="faq-title">Billing & Subscriptions</h2><div class="faq-list"><details class="faq-item"><summary>Is AppsRank free?</summary><p>AppsRank is free to download. The free version lets you browse every chart, track one app in one country with 7 days of history, and shows ads. Weekly and monthly subscriptions (with a free trial where offered) or a one-time lifetime purchase unlock every country, the full history, more tracked apps, Compare and Rank Alerts, with no ads.</p></details><details class="faq-item"><summary>How do I cancel a subscription?</summary><p>Open <strong>Settings</strong> on your iPhone → tap your name at the top → <strong>Subscriptions</strong> → <strong>AppsRank</strong> → <strong>Cancel Subscription</strong>. All subscriptions are managed entirely through Apple.</p></details><details class="faq-item"><summary>Can I get a refund?</summary><p>Refunds are handled by Apple. Visit <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> to request a refund for any App Store purchase.</p></details></div><h2 class="faq-title">Troubleshooting</h2><div class="faq-list"><details class="faq-item"><summary>Charts aren't loading</summary><p>1. Check your internet connection.<br>2. Pull to refresh on the Charts tab.<br>3. Try switching to a different country or category.<br>4. Force-close the app and reopen it.<br>5. If the problem persists, Apple's iTunes API may be temporarily unavailable — try again later.</p></details><details class="faq-item"><summary>The app is running slowly</summary><p>Go to Settings → Clear Chart Cache to free up cached data. If you're tracking many apps, rankings refresh may take a moment when the app opens.</p></details></div>
         <div class="contact">
             <h2>Still need help?</h2>
             <p>We'd love to hear from you. Whether it's a bug report, feature request, or just a question.</p>
-            <a href="mailto:iosallapps@gmail.com" class="email-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                iosallapps@gmail.com
-            </a>
+            <a href="mailto:iosallapps@gmail.com" class="btn-glow">iosallapps@gmail.com</a>
             <p class="response">We typically respond within 24-48 hours.</p>
         </div>
     </div>
-
+    </main>
     <footer>
-        <div class="links">
-            <a href="/">Home</a>
-            <a href="/privacy">Privacy Policy</a>
-            <a href="/terms">Terms of Service</a>
-            <a href="/support">Support</a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section"><h3>AppsRank</h3><p>Track App Store rankings in 170+ countries. Built for developers.</p></div>
+                <div class="footer-section"><h4>Explore</h4><ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#features">Features</a></li>
+                    <li><a href="/support">Support</a></li>
+                    <li><a href="https://apps.apple.com/app/id6762045370">App Store</a></li></ul></div>
+                <div class="footer-section"><h4>Legal</h4><ul>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Use</a></li>
+                    <li><a href="mailto:iosallapps@gmail.com">iosallapps@gmail.com</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><span>&copy; 2026 Visto Apps, the brand of Darius Cirjan</span><span>App Store is a service mark of Apple Inc. Ranking data provided by iTunes.</span><a href="https://vistoapps.com">Made by Visto Apps</a></div>
         </div>
-        <p class="copy">&copy; 2026 AppsRank. All rights reserved.</p>
     </footer>
+    <script src="/site.js?v=20261115" defer></script>
 </body>
 </html>
