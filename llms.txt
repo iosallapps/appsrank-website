@@ -1,0 +1,15 @@
+# AppsRank
+
+> AppsRank is an App Store ranking tracker for iPhone and iPad (iOS 17 or later). It shows live Top Free, Top Paid and Top Grossing charts for 170+ countries and 25+ categories, records the rank of the apps you track, compares up to 3 competitors and can send rank alerts.
+
+Price model: free to download with ads. AppsRank Pro (weekly or monthly subscription, or one-time lifetime purchase) unlocks every country, 30-day history, more tracked apps, Compare and Rank Alerts, and removes ads. No account needed; tracked apps and history stay on the device. Rankings come from Apple's public iTunes feeds.
+
+Made by Visto Apps (https://vistoapps.com), the brand of Darius Cirjan. Contact: iosallapps@gmail.com
+
+## Pages
+- [Home](https://appsrankapp.com/): what the app does
+- [Support and FAQ](https://appsrankapp.com/support): rankings, tracking, billing, troubleshooting
+- [Privacy Policy](https://appsrankapp.com/privacy): data and services
+- [Terms of Use](https://appsrankapp.com/terms)
+- [Romanian version](https://appsrankapp.com/ro/)
+- [App Store](https://apps.apple.com/app/id6762045370)
